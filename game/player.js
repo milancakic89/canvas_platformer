@@ -76,8 +76,7 @@ export class Player extends Engine {
                 return;
             }
             let onTop = this.collisions.bottom - platform.collisions.top;
-            let bellow = this.collisions.bottom - platform.collisions.top;
-            if (platform.solid_y && (onTop > -20) && (bellow < 20) &&
+            if (platform.solid_y && (onTop > -20) &&
                 (platform.collisions.left - this.collisions.right <= 1) &&
                 (this.collisions.left - platform.collisions.right <= 1) && this.velocity.y > 0) {      
                     this.velocity.y = 0;
@@ -89,12 +88,6 @@ export class Player extends Engine {
                         top++;
                         this.position.y++;
                        
-                    }
-                } else if (bellow > 0){
-                    let b = bellow;
-                    while (b !== 0) {
-                        b--;
-                        this.position.y++;
                     }
                 }
             }
